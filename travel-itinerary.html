@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Southwest Road Trip 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #F2E8D9;
+    --rust: #C4541A;
+    --dusk: #7B5EA7;
+    --sky: #3A7CA5;
+    --sage: #6B8F71;
+    --night: #1A1A2E;
+    --warm-white: #FAF7F2;
+    --text: #2C2417;
+    --muted: #8A7B6A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--warm-white);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--night);
+    color: var(--sand);
+    padding: 60px 24px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 80% 110%, rgba(196,84,26,0.35) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 10% -10%, rgba(58,124,165,0.25) 0%, transparent 60%);
+  }
+
+  .hero-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 8vw, 64px);
+    line-height: 1.05;
+    position: relative;
+    margin-bottom: 8px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: rgba(242,232,217,0.6);
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    color: rgba(242,232,217,0.55);
+    letter-spacing: 1px;
+    margin-top: 20px;
+    position: relative;
+  }
+
+  .hero-dates {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(242,232,217,0.15);
+    border-radius: 100px;
+    padding: 8px 18px;
+    font-size: 13px;
+    margin-top: 24px;
+    position: relative;
+  }
+
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--rust); flex-shrink: 0; }
+
+  /* SUMMARY STRIP */
+  .summary {
+    background: var(--rust);
+    color: white;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .summary::-webkit-scrollbar { display: none; }
+
+  .stat {
+    flex: 1;
+    min-width: 110px;
+    padding: 18px 20px;
+    border-right: 1px solid rgba(255,255,255,0.15);
+    text-align: center;
+  }
+  .stat:last-child { border-right: none; }
+  .stat-n {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-top: 4px;
+  }
+
+  /* ITINERARY */
+  .container { max-width: 680px; margin: 0 auto; padding: 0 20px; }
+
+  .section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 36px 0 20px;
+  }
+
+  .day-card {
+    display: flex;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(44,36,23,0.08);
+    animation: fadeUp 0.5s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .day-card:nth-child(1)  { animation-delay: 0.05s; }
+  .day-card:nth-child(2)  { animation-delay: 0.10s; }
+  .day-card:nth-child(3)  { animation-delay: 0.15s; }
+  .day-card:nth-child(4)  { animation-delay: 0.20s; }
+  .day-card:nth-child(5)  { animation-delay: 0.25s; }
+  .day-card:nth-child(6)  { animation-delay: 0.30s; }
+  .day-card:nth-child(7)  { animation-delay: 0.35s; }
+  .day-card:nth-child(8)  { animation-delay: 0.40s; }
+  .day-card:nth-child(9)  { animation-delay: 0.45s; }
+
+  .day-badge {
+    flex-shrink: 0;
+    width: 44px;
+    text-align: center;
+  }
+  .day-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    line-height: 1;
+    color: var(--rust);
+  }
+  .day-weekday {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+  .day-date {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 2px;
+    line-height: 1.2;
+  }
+
+  /* DAY NOTES */
+  .day-notes {
+    margin-top: 10px;
+    padding: 12px 14px;
+    background: rgba(242,232,217,0.35);
+    border-radius: 10px;
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.65;
+    white-space: pre-wrap;
+  }
+  .day-notes-placeholder {
+    margin-top: 10px;
+    padding: 10px 14px;
+    border: 1.5px dashed rgba(44,36,23,0.15);
+    border-radius: 10px;
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .day-content { flex: 1; }
+
+  .day-route {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .day-route .arrow { color: var(--rust); margin: 0 4px; font-style: normal; }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+
+  .tag-drive { background: rgba(58,124,165,0.12); color: var(--sky); }
+  .tag-fly   { background: rgba(107,143,113,0.12); color: var(--sage); }
+  .tag-hike  { background: rgba(196,84,26,0.1);  color: var(--rust); }
+  .tag-tour  { background: rgba(123,94,167,0.12); color: var(--dusk); }
+
+  .hotel-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 10px 12px;
+    background: rgba(242,232,217,0.4);
+    border-radius: 10px;
+  }
+
+  .hotel-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+  .hotel-name {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .hotel-detail {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+
+  .hotel-badge {
+    margin-left: auto;
+    flex-shrink: 0;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: rgba(107,143,113,0.15);
+    color: var(--sage);
+    white-space: nowrap;
+  }
+
+  .hotel-badge.points { background: rgba(123,94,167,0.12); color: var(--dusk); }
+  .hotel-badge.cash   { background: rgba(196,84,26,0.1);  color: var(--rust); }
+  .hotel-badge.mixed  { background: rgba(44,36,23,0.07);  color: var(--muted); }
+
+  /* COST BREAKDOWN SECTION */
+  .cost-section {
+    background: var(--night);
+    color: var(--sand);
+    margin-top: 48px;
+    padding: 36px 24px 48px;
+  }
+
+  .cost-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    margin-bottom: 6px;
+  }
+
+  .cost-section-sub {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(242,232,217,0.4);
+    margin-bottom: 32px;
+  }
+
+  .cost-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid rgba(242,232,217,0.12);
+    padding: 14px 0;
+  }
+
+  .cost-total-row:last-of-type { border-bottom: none; }
+
+  .cost-cat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cost-icon { font-size: 16px; }
+
+  .cost-label {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .cost-note {
+    font-size: 11px;
+    color: rgba(242,232,217,0.4);
+    margin-top: 2px;
+  }
+
+  .cost-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--sand);
+  }
+
+  .cost-divider {
+    border: none;
+    border-top: 1px solid rgba(242,232,217,0.08);
+    margin: 8px 0;
+  }
+
+  .cost-grand {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(242,232,217,0.2);
+  }
+
+  .cost-grand-label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(242,232,217,0.55);
+  }
+
+  .cost-grand-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    color: var(--rust);
+  }
+
+  /* HOTEL DETAIL BREAKDOWN */
+  .hotel-breakdown {
+    margin-top: 28px;
+    border-top: 1px solid rgba(242,232,217,0.1);
+    padding-top: 24px;
+  }
+
+  .hb-title {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(242,232,217,0.35);
+    margin-bottom: 16px;
+  }
+
+  .hb-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(242,232,217,0.06);
+    gap: 12px;
+  }
+
+  .hb-row:last-child { border-bottom: none; }
+
+  .hb-hotel { font-size: 13px; font-weight: 400; line-height: 1.3; }
+  .hb-sub   { font-size: 11px; color: rgba(242,232,217,0.4); margin-top: 2px; line-height: 1.4; }
+
+  .hb-right { text-align: right; flex-shrink: 0; }
+  .hb-cost  { font-size: 14px; font-family: 'Playfair Display', serif; }
+  .hb-tag   {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-top: 4px;
+  }
+  .hb-tag.fhr    { background: rgba(107,143,113,0.2); color: #9BC4A1; }
+  .hb-tag.pts    { background: rgba(123,94,167,0.25); color: #B8A3E0; }
+  .hb-tag.cash5x { background: rgba(196,84,26,0.2);  color: #E8916A; }
+  .hb-tag.csp    { background: rgba(58,124,165,0.2); color: #82BDD8; }
+  .hb-tag.gc     { background: rgba(242,232,217,0.1); color: rgba(242,232,217,0.55); }
+
+  /* FLIGHT CARDS */
+  .flight-card {
+    background: var(--night);
+    color: var(--sand);
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .flight-cities {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+  }
+  .flight-code {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+  }
+  .flight-arrow { color: var(--rust); font-size: 16px; }
+  .flight-info { font-size: 11px; color: rgba(242,232,217,0.5); margin-top: 2px; }
+  .flight-time {
+    font-size: 13px;
+    color: rgba(242,232,217,0.7);
+    text-align: right;
+  }
+  .flight-num {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(242,232,217,0.35);
+    margin-bottom: 8px;
+  }
+  .flight-segment {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .flight-segment-time {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    line-height: 1;
+  }
+  .flight-segment-city {
+    font-size: 10px;
+    color: rgba(242,232,217,0.4);
+    margin-top: 3px;
+  }
+  .flight-dash {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--rust);
+    font-size: 14px;
+  }
+  .flight-dash-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(196,84,26,0.4);
+  }
+
+  /* MAP LINK */
+  .map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    color: var(--sky);
+    text-decoration: none;
+    margin-top: 5px;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+  }
+  .map-link:hover { opacity: 1; text-decoration: underline; }
+
+  /* TRIP NAV */
+  .trip-nav {
+    background: var(--warm-white);
+    border-bottom: 1px solid rgba(44,36,23,0.08);
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .trip-nav::-webkit-scrollbar { display: none; }
+  .trip-nav-inner {
+    display: flex;
+    gap: 0;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .trip-nav-item {
+    flex-shrink: 0;
+    padding: 14px 18px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .trip-nav-item:hover { color: var(--text); }
+  .trip-nav-item.active { color: var(--rust); border-bottom-color: var(--rust); }
+
+  /* TRIP PAGE */
+  .trip-page { display: none; }
+  .trip-page.active { display: block; }
+
+  /* JOURNAL SECTION */
+  .journal-section {
+    background: var(--warm-white);
+    padding: 40px 20px 60px;
+    border-top: 1px solid rgba(44,36,23,0.07);
+  }
+  .journal-section .container { max-width: 680px; margin: 0 auto; }
+  .journal-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+  .journal-sub {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+  .journal-entry {
+    background: white;
+    border: 1px solid rgba(44,36,23,0.08);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 4px rgba(44,36,23,0.04);
+  }
+  .journal-entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  .journal-entry-day {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--rust);
+  }
+  .journal-entry-date {
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .journal-entry-text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text);
+    white-space: pre-wrap;
+  }
+  .journal-add-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: 1.5px dashed rgba(44,36,23,0.2);
+    border-radius: 14px;
+    padding: 16px 20px;
+    width: 100%;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    transition: all 0.2s;
+    margin-top: 4px;
+  }
+  .journal-add-btn:hover { border-color: var(--rust); color: var(--rust); background: rgba(196,84,26,0.03); }
+
+  .journal-compose {
+    display: none;
+    background: white;
+    border: 1px solid rgba(44,36,23,0.1);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 12px rgba(44,36,23,0.08);
+  }
+  .journal-compose.open { display: block; }
+  .journal-compose-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .journal-compose select,
+  .journal-compose input[type="date"] {
+    flex: 1;
+    padding: 9px 12px;
+    border: 1px solid rgba(44,36,23,0.15);
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--text);
+    background: var(--warm-white);
+    outline: none;
+  }
+  .journal-compose select:focus,
+  .journal-compose input:focus,
+  .journal-compose textarea:focus { border-color: var(--rust); }
+
+  .journal-compose textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 12px;
+    border: 1px solid rgba(44,36,23,0.15);
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text);
+    resize: vertical;
+    outline: none;
+    background: var(--warm-white);
+  }
+  .journal-compose-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .btn-cancel {
+    padding: 9px 18px;
+    border: 1px solid rgba(44,36,23,0.15);
+    border-radius: 8px;
+    background: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    cursor: pointer;
+  }
+  .btn-save {
+    padding: 9px 20px;
+    background: var(--rust);
+    border: none;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+  }
+  .btn-save:hover { background: #a84615; }
+
+  .journal-empty {
+    text-align: center;
+    padding: 32px 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  /* PLACEHOLDER TRIP CARD */
+  .placeholder-trip {
+    border: 1.5px dashed rgba(44,36,23,0.15);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    color: var(--muted);
+  }
+  .placeholder-trip-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--text);
+    margin-bottom: 8px;
+    opacity: 0.4;
+  }
+  .placeholder-trip-sub { font-size: 13px; }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 40px 20px 60px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .route-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(242,232,217,0.6);
+    border-left: 3px solid var(--rust);
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    font-size: 13px;
+    color: var(--text);
+    margin: 0 0 8px;
+  }
+</style>
+</head>
+<body>
+
+<!-- TRIP NAV -->
+<nav class="trip-nav">
+  <div class="trip-nav-inner">
+    <div class="trip-nav-item active" onclick="showTrip('sw2025')">🏜 Southwest '26</div>
+    <div class="trip-nav-item" onclick="showTrip('past')">📚 Past Trips</div>
+  </div>
+</nav>
+
+<!-- SOUTHWEST 2025 -->
+<div id="trip-sw2025" class="trip-page active">
+
+<div class="hero">
+  <div class="hero-label">Road Trip · April 24 – May 2, 2026</div>
+  <h1 class="hero-title">American<br><em>Southwest</em></h1>
+  <div class="hero-dates">
+    <span class="dot"></span>
+    Atlanta · Las Vegas · Death Valley · Zion · Page · Bryce · Capitol Reef
+    <span class="dot"></span>
+  </div>
+  <div class="hero-sub">顺时针环线 · 9 Days · 2 Travelers</div>
+</div>
+
+<div class="summary">
+  <div class="stat"><div class="stat-n">9</div><div class="stat-label">Days</div></div>
+  <div class="stat"><div class="stat-n">5</div><div class="stat-label">Parks</div></div>
+  <div class="stat"><div class="stat-n">~18h</div><div class="stat-label">Driving</div></div>
+  <div class="stat"><div class="stat-n">7</div><div class="stat-label">Hotels</div></div>
+</div>
+
+<div class="container">
+  <div class="section-heading">Full Itinerary</div>
+
+  <!-- Day 1 -->
+  <div class="day-card">
+    <div class="day-badge"><div class="day-num">1</div><div class="day-weekday">Fri</div><div class="day-date">Apr 24</div></div>
+    <div class="day-content">
+      <div class="day-route">Atlanta <span class="arrow">✈</span> Las Vegas</div>
+      <div class="flight-card">
+        <div style="width:100%">
+          <div class="flight-num">Delta DL 825 · Fri Apr 24 · Seats 36B,C,D,E</div>
+          <div class="flight-segment">
+            <div>
+              <div class="flight-segment-time">7:40 pm</div>
+              <div class="flight-segment-city">ATL · Atlanta</div>
+            </div>
+            <div class="flight-dash"><div class="flight-dash-line"></div>✈</div>
+            <div style="text-align:right">
+              <div class="flight-segment-time">9:07 pm</div>
+              <div class="flight-segment-city">LAS · Las Vegas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hotel-row">
+        <div class="hotel-icon">🏨</div>
+        <div>
+          <div class="hotel-name">MGM Grand · Las Vegas</div>
+          <a class="map-link" href="https://maps.google.com/?q=MGM+Grand+Las+Vegas,+3799+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109" target="_blank">📍 Open in Maps</a>
+        </div>
+        <div class="hotel-badge">$0 OOP</div>
+      </div>
+      <div class="day-notes-placeholder">No notes yet — add details for Day 1</div>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-badge"><div class="day-num">2</div><div class="day-weekday">Sat</div><div class="day-date">Apr 25</div></div>
+    <div class="day-content">
+      <div class="day-route">Las Vegas <span class="arrow">→</span> Death Valley <span class="arrow">→</span> Las Vegas</div>
+      <div class="hotel-row">
+        <div class="hotel-icon">🏨</div>
+        <div>
+          <div class="hotel-name">MGM Grand · Las Vegas</div>
+          <a class="map-link" href="https://maps.google.com/?q=MGM+Grand+Las+Vegas,+3799+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109" target="_blank">📍 Open in Maps</a>
+        </div>
+        <div class="hotel-badge">Night 2 of 2</div>
+      </div>
+      <div class="day-notes-placeholder">No notes yet — add details for Day 2</div>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-badge"><div class="day-num">3</div><div class="day-weekday">Sun</div><div class="day-date">Apr 26</div></div>
+    <div class="day-content">
+      <div class="day-route">Las Vegas <span class="arrow">→</span> Zion</div>
+      <div class="hotel-row">
+        <div class="hotel-icon">🏨</div>
+        <div>
+          <div class="hotel-name">Hyatt Springdale</div>
+          <a class="map-link" href="https://maps.google.com/?q=Hyatt+Place+Springdale+Zion+National+Park+Area,+1515+Zion+Park+Blvd,+Springdale,+UT+84767" target="_blank">📍 Open in Maps</a>
+        </div>
+        <div class="hotel-badge points">Points</div>
+      </div>
+      <div class="day-notes-placeholder">No notes yet — add details for Day 3</div>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-badge"><div class="day-num">4</div><div class="day-weekday">Mon</div><div class="day-date">Apr 27</div></div>
+    <div class="day-content">
+      <div class="day-route">Zion — Full Day</div>
+      <div class="hotel-row">
+        <div class="hotel-icon">🏨</div>
+        <div>
+          <div class="hotel-name">Hyatt Springdale</div>
+          <a class="map-link" href="https://maps.google.com/?q=Hyatt+Place+Springdale+Zion+National+Park+Area,+1515+Zion+Park+Blvd,+Springdale,+UT+84767" target="_blank">📍 Open in Maps</a>
+        </div>
+        <div class="hotel-badge points">Night 2 of 2</div>
+      </div>
+      <div class="day-notes-placeholder">No notes yet — add details for Day 4</div>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-badge"><div class="day-num">5</div><div class="day-weekday">Tue</div><div class="day-date">Apr 28</div></div>
+    <div class="day-content">
+      <div class="day-route">Zion <span class="arrow">→</span> Page</div>
+      <div class="hotel-row">
+        <div class="hotel-icon">🏨</div>
+        <div>
+          <div class="hotel-name">Home2 Suites Page</div>
+          <a class="map-link" href="https://maps.google.com/?q=Home2+Suites+by+Hilton+Page+Lake+Powell,+645+Elm+St,+Page,+AZ+86040" target="_blank">📍 Open in Maps</a>
+        </div>
+        <div class="hotel-badge cash">$398</div>
+      </div>
+      <div class="day-notes">• Antelope Canyon — Dixie Tour @ 3:45 PM
+• Horseshoe Bend</div>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-badge"><div class="day-num">6</div><div class="day-weekday">Wed</div><div class="day-date">Apr 29</div></div>
+    <div class="day-content">
+      <div class="day-route">Page <span class="arrow">→</span> Bryce Canyon</div>
+      <div class="hotel-row">
+        <div class="hotel-icon">🏨</div>
+        <div>
+          <div class="hotel-name">Best Western Plus Ruby's Inn</div>
+          <a class="map-link" href="https://maps.google.com/?q=Best+Western+Plus+Ruby%27s+Inn,+26+S+Main+St,+Bryce,+UT+84764" target="_blank">📍 Open in Maps</a>
+        </div>
+        <div class="hotel-badge cash">$495</div>
+      </div>
+      <div class="day-notes">• Lake Powell — boat rental (Lowe) 🚤 highlight of the entire trip
+• Biidi the Arch
+• Navajo Mountain Viewpoint
+• Wahweap Viewpoint
+• Bryce Canyon</div>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-badge"><div class="day-num">7</div><div class="day-weekday">Thu</div><div class="day-date">Apr 30</div></div>
+    <div class="day-content">
+      <div class="day-route">Bryce Canyon <span class="arrow">→</span> Capitol Reef</div>
+      <div class="hotel-row">
+        <div class="hotel-icon">🏨</div>
+        <div>
+          <div class="hotel-name">Red Sands Hotel · Torrey</div>
+          <a class="map-link" href="https://maps.google.com/?q=Red+Sands+Hotel,+675+E+Hwy+24,+Torrey,+UT+84775" target="_blank">📍 Open in Maps</a>
+        </div>
+        <div class="hotel-badge mixed">$364</div>
+      </div>
+      <div class="day-notes">Bryce Canyon
+• Navajo Loop
+• Lower Inspiration Point
+• Bryce Point ⭐ best
+
+Capitol Reef
+• Panorama Point
+• Petroglyph Panels
+• Scenic Drive ⭐ best</div>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-badge"><div class="day-num">8</div><div class="day-weekday">Fri</div><div class="day-date">May 1</div></div>
+    <div class="day-content">
+      <div class="day-route">Capitol Reef <span class="arrow">→</span> Las Vegas</div>
+      <div class="hotel-row">
+        <div class="hotel-icon">🏨</div>
+        <div>
+          <div class="hotel-name">SpringHill Suites Las Vegas Airport</div>
+          <a class="map-link" href="https://maps.google.com/?q=SpringHill+Suites+Las+Vegas+Airport,+5011+Swenson+St,+Las+Vegas,+NV+89119" target="_blank">📍 Open in Maps</a>
+        </div>
+        <div class="hotel-badge points">Points + GC</div>
+      </div>
+      <div class="day-notes-placeholder">No notes yet — add details for Day 8</div>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-badge"><div class="day-num">9</div><div class="day-weekday">Sat</div><div class="day-date">May 2</div></div>
+    <div class="day-content">
+      <div class="day-route">Las Vegas <span class="arrow">✈</span> Atlanta</div>
+      <div class="flight-card">
+        <div style="width:100%">
+          <div class="flight-num">Delta DL 466 · Sat May 2 · Seats 37B,C,D,E</div>
+          <div class="flight-segment">
+            <div>
+              <div class="flight-segment-time">1:29 pm</div>
+              <div class="flight-segment-city">LAS · Las Vegas</div>
+            </div>
+            <div class="flight-dash"><div class="flight-dash-line"></div>✈</div>
+            <div style="text-align:right">
+              <div class="flight-segment-time">8:32 pm</div>
+              <div class="flight-segment-city">ATL · Atlanta</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="day-notes-placeholder">No notes yet — add details for Day 9</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Southwest Loop · Apr 24 – May 2, 2026<br>
+    Atlanta → Las Vegas → Death Valley → Zion → Page → Bryce → Capitol Reef → Las Vegas → Atlanta
+  </div>
+</div>
+
+<!-- COST BREAKDOWN -->
+<div class="cost-section">
+  <div style="max-width:680px;margin:0 auto;">
+    <div class="cost-section-title">Cost Breakdown</div>
+    <div class="cost-section-sub">Out-of-pocket · 2 travelers · 2026</div>
+
+    <div class="cost-total-row">
+      <div class="cost-cat">
+        <span class="cost-icon">🚗</span>
+        <div>
+          <div class="cost-label">Car Rental</div>
+          <div class="cost-note">$368 rental + $120 ATL airport parking</div>
+        </div>
+      </div>
+      <div class="cost-amount">$488</div>
+    </div>
+
+    <div class="cost-total-row">
+      <div class="cost-cat">
+        <span class="cost-icon">✈️</span>
+        <div>
+          <div class="cost-label">Flights · ATL ↔ LAS</div>
+          <div class="cost-note">Parents only — we used Delta eCredit</div>
+        </div>
+      </div>
+      <div class="cost-amount">$1,056</div>
+    </div>
+
+    <div class="cost-total-row">
+      <div class="cost-cat">
+        <span class="cost-icon">🏨</span>
+        <div>
+          <div class="cost-label">Hotels (cash portion)</div>
+          <div class="cost-note">$0 + $398 + $495 + $364 + $253</div>
+        </div>
+      </div>
+      <div class="cost-amount">$1,510</div>
+    </div>
+
+    <div class="cost-total-row">
+      <div class="cost-cat">
+        <span class="cost-icon">🎵</span>
+        <div>
+          <div class="cost-label">Antelope Canyon Tour</div>
+          <div class="cost-note">Dixie tour · Apr 29 @ 3:45 PM</div>
+        </div>
+      </div>
+      <div class="cost-amount">$322</div>
+    </div>
+
+    <div class="cost-total-row">
+      <div class="cost-cat">
+        <span class="cost-icon">🛒</span>
+        <div>
+          <div class="cost-label">In-Trip Spend</div>
+          <div class="cost-note">Gas · dining · shopping</div>
+        </div>
+      </div>
+      <div class="cost-amount">$1,424</div>
+    </div>
+
+    <div class="cost-grand">
+      <div>
+        <div class="cost-grand-label">Total Out-of-Pocket</div>
+      </div>
+      <div class="cost-grand-num">$4,800</div>
+    </div>
+
+    <!-- Hotel Detail Breakdown -->
+    <div class="hotel-breakdown">
+      <div class="hb-title">Hotel Details · Points & Credits Used</div>
+
+      <div class="hb-row">
+        <div>
+          <div class="hb-hotel">MGM Grand · Las Vegas</div>
+          <div class="hb-sub">Days 1–2 · 2 nights</div>
+        </div>
+        <div class="hb-right">
+          <div class="hb-cost">$0</div>
+          <span class="hb-tag fhr">Amex FHR</span>
+        </div>
+      </div>
+      <div class="hb-row" style="padding-left:12px; border-bottom: 1px solid rgba(242,232,217,0.06);">
+        <div style="font-size:11px; color:rgba(242,232,217,0.35); line-height:1.5;">
+          2× $428 FHR credit applied · resort fee waived · $0 OOP<br>
+          Includes: daily breakfast, $100 F&amp;B credit, room upgrade (if avail)
+        </div>
+      </div>
+
+      <div class="hb-row">
+        <div>
+          <div class="hb-hotel">Hyatt Springdale</div>
+          <div class="hb-sub">Days 3–4 · 2 nights · Zion</div>
+        </div>
+        <div class="hb-right">
+          <div class="hb-cost">$0</div>
+          <span class="hb-tag pts">Hyatt Points</span>
+        </div>
+      </div>
+      <div class="hb-row" style="padding-left:12px; border-bottom: 1px solid rgba(242,232,217,0.06);">
+        <div style="font-size:11px; color:rgba(242,232,217,0.35);">34K pts × 2 nights = 68K total · ~2.5 cpp</div>
+      </div>
+
+      <div class="hb-row">
+        <div>
+          <div class="hb-hotel">Home2 Suites Page</div>
+          <div class="hb-sub">Day 5 · 1 night · Page, AZ</div>
+        </div>
+        <div class="hb-right">
+          <div class="hb-cost">$398</div>
+          <span class="hb-tag gc">Cash · 2 rooms</span>
+        </div>
+      </div>
+
+      <div class="hb-row">
+        <div>
+          <div class="hb-hotel">Best Western Plus Ruby's Inn</div>
+          <div class="hb-sub">Day 6 · 1 night · Bryce Canyon</div>
+        </div>
+        <div class="hb-right">
+          <div class="hb-cost">$495</div>
+          <span class="hb-tag cash5x">Chase 5× · 2 rooms</span>
+        </div>
+      </div>
+
+      <div class="hb-row">
+        <div>
+          <div class="hb-hotel">Red Sands Hotel · Torrey</div>
+          <div class="hb-sub">Day 7 · 1 night · Capitol Reef area</div>
+        </div>
+        <div class="hb-right">
+          <div class="hb-cost">$364</div>
+          <span class="hb-tag csp">CSP −$50×2</span>
+        </div>
+      </div>
+      <div class="hb-row" style="padding-left:12px; border-bottom: 1px solid rgba(242,232,217,0.06);">
+        <div style="font-size:11px; color:rgba(242,232,217,0.35);">$232 × 2 rooms = $464 · minus $50 CSP hotel credit each</div>
+      </div>
+
+      <div class="hb-row">
+        <div>
+          <div class="hb-hotel">SpringHill Suites · LAS Airport</div>
+          <div class="hb-sub">Day 8 · 1 night · pre-flight</div>
+        </div>
+        <div class="hb-right">
+          <div class="hb-cost">$253</div>
+          <span class="hb-tag pts">35K FN Pts + GC</span>
+        </div>
+      </div>
+      <div class="hb-row" style="padding-left:12px;">
+        <div style="font-size:11px; color:rgba(242,232,217,0.35);">35K Marriott Bonvoy pts + $253 paid via gift card · included in hotel total</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  Southwest Loop · Apr 24 – May 2, 2026<br>
+  Atlanta → Las Vegas → Death Valley → Zion → Page → Bryce → Capitol Reef → Las Vegas → Atlanta
+</div>
+
+<!-- JOURNAL -->
+<div class="journal-section">
+  <div class="container">
+    <div class="journal-heading">Trip Journal</div>
+    <div class="journal-sub">Notes & Memories</div>
+
+    <div id="journal-entries"></div>
+
+    <div class="journal-compose" id="journal-compose">
+      <div class="journal-compose-row">
+        <select id="journal-day">
+          <option value="">Select day...</option>
+          <option value="Day 1 · Fri Apr 24">Day 1 · Fri Apr 24 — Fly to Vegas</option>
+          <option value="Day 2 · Sat Apr 25">Day 2 · Sat Apr 25 — Death Valley</option>
+          <option value="Day 3 · Sun Apr 26">Day 3 · Sun Apr 26 — Vegas → Zion</option>
+          <option value="Day 4 · Mon Apr 27">Day 4 · Mon Apr 27 — Zion</option>
+          <option value="Day 5 · Tue Apr 28">Day 5 · Tue Apr 28 — Zion → Page</option>
+          <option value="Day 6 · Wed Apr 29">Day 6 · Wed Apr 29 — Page → Bryce</option>
+          <option value="Day 7 · Thu Apr 30">Day 7 · Thu Apr 30 — Bryce → Capitol Reef</option>
+          <option value="Day 8 · Fri May 1">Day 8 · Fri May 1 — Capitol Reef → Vegas</option>
+          <option value="Day 9 · Sat May 2">Day 9 · Sat May 2 — Fly home</option>
+        </select>
+        <input type="date" id="journal-date">
+      </div>
+      <textarea id="journal-text" placeholder="Write about today... what did you see, eat, feel?"></textarea>
+      <div class="journal-compose-actions">
+        <button class="btn-cancel" onclick="closeJournal()">Cancel</button>
+        <button class="btn-save" onclick="saveEntry()">Save Entry</button>
+      </div>
+    </div>
+
+    <button class="journal-add-btn" id="journal-add-btn" onclick="openJournal()">
+      ✏️ Add a journal entry
+    </button>
+  </div>
+</div>
+
+</div> <!-- end trip-sw2025 -->
+
+<!-- PAST TRIPS PAGE -->
+<div id="trip-past" class="trip-page">
+  <div style="background:var(--night);color:var(--sand);padding:48px 24px 36px;">
+    <div style="max-width:680px;margin:0 auto;">
+      <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--rust);margin-bottom:12px;">Travel Archive</div>
+      <div style="font-family:'Playfair Display',serif;font-size:36px;line-height:1.1;">Past <em style="opacity:0.5">Trips</em></div>
+      <div style="font-size:13px;color:rgba(242,232,217,0.4);margin-top:12px;">Your travel history, one trip at a time</div>
+    </div>
+  </div>
+  <div style="max-width:680px;margin:0 auto;padding:32px 20px 80px;">
+    <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:20px;">Coming Soon</div>
+
+    <div class="placeholder-trip" style="margin-bottom:16px;">
+      <div class="placeholder-trip-title">Trip 2</div>
+      <div class="placeholder-trip-sub">Share your Apple Notes and I'll build this out ↓</div>
+    </div>
+    <div class="placeholder-trip" style="margin-bottom:16px;">
+      <div class="placeholder-trip-title">Trip 3</div>
+      <div class="placeholder-trip-sub">Share your Apple Notes and I'll build this out ↓</div>
+    </div>
+    <div class="placeholder-trip">
+      <div class="placeholder-trip-title">+ More</div>
+      <div class="placeholder-trip-sub">Ready whenever you are</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── TAB NAV ──────────────────────────────────────────
+  function showTrip(id) {
+    document.querySelectorAll('.trip-page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.trip-nav-item').forEach(n => n.classList.remove('active'));
+    document.getElementById('trip-' + id).classList.add('active');
+    event.target.classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  // ── JOURNAL ──────────────────────────────────────────
+  const STORAGE_KEY = 'sw2025_journal';
+
+  function loadEntries() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); }
+    catch { return []; }
+  }
+
+  function saveEntries(entries) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+  }
+
+  function renderEntries() {
+    const entries = loadEntries();
+    const container = document.getElementById('journal-entries');
+    if (entries.length === 0) {
+      container.innerHTML = '<div class="journal-empty">No entries yet — start writing! ✍️</div>';
+      return;
+    }
+    container.innerHTML = entries.map((e, i) => `
+      <div class="journal-entry">
+        <div class="journal-entry-header">
+          <div class="journal-entry-day">${e.day || 'General'}</div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div class="journal-entry-date">${e.date || ''}</div>
+            <button onclick="deleteEntry(${i})" style="background:none;border:none;cursor:pointer;color:var(--muted);font-size:14px;padding:0;" title="Delete">✕</button>
+          </div>
+        </div>
+        <div class="journal-entry-text">${e.text}</div>
+      </div>
+    `).join('');
+  }
+
+  function openJournal() {
+    document.getElementById('journal-compose').classList.add('open');
+    document.getElementById('journal-add-btn').style.display = 'none';
+    // Set today's date as default
+    document.getElementById('journal-date').valueAsDate = new Date();
+  }
+
+  function closeJournal() {
+    document.getElementById('journal-compose').classList.remove('open');
+    document.getElementById('journal-add-btn').style.display = 'flex';
+    document.getElementById('journal-text').value = '';
+    document.getElementById('journal-day').value = '';
+  }
+
+  function saveEntry() {
+    const text = document.getElementById('journal-text').value.trim();
+    if (!text) return;
+    const entries = loadEntries();
+    entries.unshift({
+      day: document.getElementById('journal-day').value,
+      date: document.getElementById('journal-date').value,
+      text
+    });
+    saveEntries(entries);
+    renderEntries();
+    closeJournal();
+  }
+
+  function deleteEntry(i) {
+    if (!confirm('Delete this entry?')) return;
+    const entries = loadEntries();
+    entries.splice(i, 1);
+    saveEntries(entries);
+    renderEntries();
+  }
+
+  renderEntries();
+</script>
+</body>
+</html>
